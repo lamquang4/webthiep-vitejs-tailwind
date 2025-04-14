@@ -80,7 +80,7 @@ function LoginForm() {
                   name="email"
                   value={data.email}
                   onChange={handleOnChange}
-                  className="text-[0.9rem] block w-full px-3 py-2 border border-[#e5e5e5] text-black placeholder:text-black"
+                  className="text-[0.9rem] block w-full px-3 py-2 border border-[#e5e5e5] text-[#e5e5e5] placeholder:text-[#e5e5e5]"
                   placeholder="Nhập email"
                   required
                 />
@@ -98,7 +98,7 @@ function LoginForm() {
                   value={data.password}
                   onChange={handleOnChange}
                   placeholder="Nhập mật khẩu"
-                  className="text-[0.9rem] block w-full px-3 py-2 border border-[#e5e5e5] text-black placeholder:text-black"
+                  className="text-[0.9rem] block w-full px-3 py-2 border border-[#e5e5e5] text-[#e5e5e5] placeholder:text-[#e5e5e5]"
                   required
                 />
               </div>

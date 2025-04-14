@@ -26,6 +26,8 @@ function Layout() {
   const shouldHide = location.pathname === "/";
   if (!user) {
     navigate("/");
+  } else {
+    navigate("/ad-qtv");
   }
   return (
     <React.Fragment>
