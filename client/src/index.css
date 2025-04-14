@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import "tailwindcss";
+@plugin "daisyui";
+
+* {
+  font-family: Quicksand;
+}
+
+body {
+  background-color: white;
+}
+
+a,
+img {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Send.jsx   */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  width: 100%;
+  max-width: 380px;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.flip-card.show {
+  opacity: 1;
+  visibility: visible;
+}
+.flip-card-inner {
+  position: relative;
+  text-align: center;
+  transition: transform 0.7s ease-in-out;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card .flip-card-inner.flip {
+  transform: rotateY(180deg);
+  transition-delay: 1.5s;
+}
+
+#flip-card-back {
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 480px) {
+  .card-save:nth-child(2n + 1) .menu {
+    left: 0;
+    right: unset;
+  }
+  .card-save:nth-child(2n) .menu {
+    right: 0;
+  }
+}
