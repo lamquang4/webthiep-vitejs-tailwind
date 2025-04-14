@@ -64,7 +64,7 @@ function LoginForm() {
         <Image
           Src={"/assets/other/logo.png"}
           Alt={""}
-          ClassName={"w-[110px]"}
+          ClassName={"w-[100px]"}
         />
       </div>
       <div className="relative max-w-[420px] w-full bg-white rounded-lg shadow-lg overflow-hidden mx-5">

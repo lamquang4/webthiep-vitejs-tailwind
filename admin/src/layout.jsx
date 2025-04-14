@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Login from "./page/Login";
 import SideMenu from "./components/SideMenu";
@@ -21,15 +21,17 @@ import { useSelector } from "react-redux";
 function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
+  const userId = localStorage.getItem("userId");
   const shouldHide = location.pathname === "/";
-
   useEffect(() => {
-    const isLoginPage = location.pathname === "/";
-    if (!user && !isLoginPage) {
+    if (!userId && location.pathname !== "/") {
       navigate("/");
     }
-  }, [user, location, navigate]);
+
+    if (userId) {
+      navigate("/ad-qtv");
+    }
+  }, []);
   return (
     <React.Fragment>
       {!shouldHide && <SideMenu />}
@@ -37,6 +39,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="*" element={<Login />} />
+
         <Route path="/ad-card" element={<AdminCard />} />
         <Route path="/ad-qtv" element={<AdminQTV />} />
         <Route path="/ad-nd" element={<AdminND />} />
