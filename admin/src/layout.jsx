@@ -17,18 +17,19 @@ import AdminEditDM from "./page/AdminEditDM";
 import AdminEditSUBDM from "./page/AdminEditSUBDM";
 import AdminEditND from "./page/AdminEditND";
 import AdminEditQTV from "./page/AdminEditQTV";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 function Layout() {
   const location = useLocation();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const shouldHide = location.pathname === "/";
-  if (!user) {
-    navigate("/");
-  } else {
-    navigate("/ad-qtv");
-  }
+
+  useEffect(() => {
+    const isLoginPage = location.pathname === "/";
+    if (!user && !isLoginPage) {
+      navigate("/");
+    }
+  }, [user, location, navigate]);
   return (
     <React.Fragment>
       {!shouldHide && <SideMenu />}
