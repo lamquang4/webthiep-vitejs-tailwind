@@ -59,7 +59,7 @@ function LoginForm() {
   };
 
   return (
-    <section className="bg-[#F9FAFB] w-full h-screen flex justify-center items-center flex-col gap-[30px]">
+    <section className="bg-[#F9FAFB] w-full h-screen flex justify-center items-center flex-col gap-[30px] px-[15px]">
       <div className="">
         <Image
           Src={"/assets/other/logo.png"}
@@ -67,10 +67,10 @@ function LoginForm() {
           ClassName={"w-[100px]"}
         />
       </div>
-      <div className="relative max-w-[420px] w-full bg-white rounded-lg shadow-lg overflow-hidden mx-5">
+      <div className="relative max-w-[420px] w-full bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden mx-5">
         <div className="flex items-center h-[440px] w-[200%] transition-all duration-200 ease">
-          <div className="w-1/2 px-8 bg-white transition-all duration-150 ease">
-            <h2 className="relative text-[1.6rem] text-center font-semibold">
+          <div className="w-1/2 md:px-8 px-6 bg-white transition-all duration-150 ease">
+            <h2 className="relative text-[1.5rem] text-center font-semibold">
               Đăng nhập quản trị viên
             </h2>
 
@@ -108,7 +108,7 @@ function LoginForm() {
               </div>
 
               <div className="mt-10">
-                <button className="w-full text-[0.95rem] py-2 text-white font-medium tracking-wide rounded-md bg-blue-500 hover:bg-blue-600 transition-all duration-300">
+                <button className="w-full text-[0.9rem] py-2 text-white font-medium tracking-wide rounded-md bg-blue-500 hover:bg-blue-600 transition-all duration-300">
                   Đăng nhập
                 </button>
               </div>
