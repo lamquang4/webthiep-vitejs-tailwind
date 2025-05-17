@@ -91,7 +91,7 @@ function AdminEditSUBDMContent() {
               encType="multipart/form-data"
             >
               <h1 className="font-bold text-[1.85rem] text-[#74767d]">
-                Thêm danh mục con
+                Chỉnh sửa danh mục con
               </h1>
 
               <div className="flex flex-col gap-1">
@@ -116,6 +116,7 @@ function AdminEditSUBDMContent() {
                   name="categoryId"
                   value={data.categoryId}
                   onChange={handleOnChange}
+                  required
                   className="border border-gray-400 px-2 py-1 text-[0.9rem] outline-none"
                 >
                   <option value="">Chọn danh mục cha</option>

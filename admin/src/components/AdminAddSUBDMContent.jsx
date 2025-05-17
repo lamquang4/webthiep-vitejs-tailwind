@@ -94,6 +94,7 @@ function AdminAddSUBDMContent() {
                   name="categoryId"
                   value={data.categoryId}
                   onChange={handleOnChange}
+                  required
                   className="border border-gray-400 px-2 py-1 text-[0.9rem] outline-none"
                 >
                   <option value="">Chọn danh mục cha</option>
