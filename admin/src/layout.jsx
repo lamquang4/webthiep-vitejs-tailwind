@@ -17,29 +17,27 @@ import AdminEditDM from "./page/AdminEditDM";
 import AdminEditSUBDM from "./page/AdminEditSUBDM";
 import AdminEditND from "./page/AdminEditND";
 import AdminEditQTV from "./page/AdminEditQTV";
-import { useSelector } from "react-redux";
 function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
   const userId = localStorage.getItem("userId");
-  const shouldHide = location.pathname === "/";
+  const hideHeaderPaths = ["/login"];
+  const shouldHide = hideHeaderPaths.includes(location.pathname);
   useEffect(() => {
-    if (!userId && location.pathname !== "/") {
-      navigate("/");
+    if (!userId) {
+      navigate("/login");
+    } else {
+      navigate({ location });
     }
-
-    if (userId) {
-      navigate("/ad-qtv");
-    }
-  }, []);
+  }, [userId]);
   return (
     <React.Fragment>
       {!shouldHide && <SideMenu />}
 
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="*" element={<Login />} />
+        <Route path="/login" element={<Login />} />
 
+        <Route path="/" element={<AdminQTV />} />
         <Route path="/ad-card" element={<AdminCard />} />
         <Route path="/ad-qtv" element={<AdminQTV />} />
         <Route path="/ad-nd" element={<AdminND />} />

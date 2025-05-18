@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { HiMiniBars3 } from "react-icons/hi2";
-import { RxEnvelopeClosed } from "react-icons/rx";
-import { LiaBell } from "react-icons/lia";
 import { LiaPowerOffSolid } from "react-icons/lia";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,7 +20,7 @@ function Header() {
       dispatch(logout());
       localStorage.clear();
       document.cookie = "token_admin=; expires=now; path=/;";
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       console.error("Lỗi khi đăng xuất:", error);
     }
@@ -40,14 +38,14 @@ function Header() {
         dispatch(logout());
         localStorage.clear();
         document.cookie = "token_admin=; expires=now; path=/;";
-        navigate("/");
+        navigate("/login");
       }
     } catch (error) {
       console.log("error", error);
       dispatch(logout());
       localStorage.clear();
       document.cookie = "token_admin=; expires=now; path=/;";
-      navigate("/");
+      navigate("/login");
     }
   };
 

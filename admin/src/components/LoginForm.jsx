@@ -8,11 +8,6 @@ import { setToken } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 function LoginForm() {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword((prevState) => !prevState);
-  };
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
